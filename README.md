@@ -1,2 +1,2 @@
-# Ready-recknor-codes-for-competitive-coding.
-This repo contains codes for most used data structures, header files info and some algorithms helpful in competitive coding. (Language support includes C, C++, JAVA and Python)
+# Compiled codes.
+This branch contains some important codes which are already compiled and error free so that can be used as handy tools.
