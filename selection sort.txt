@@ -1,0 +1,96 @@
+#include <stdio.h>
+
+#include<stdlib.h>
+
+
+void SelectionSort(int a[] ,int size);
+
+
+void SelectionSort(int a[] ,int size)
+
+{
+
+int i,j ,temp;
+
+
+for(i=0;i<size-1;i++)
+
+
+{
+   
+for(j=i+1;j<size;j++)
+
+    {
+        
+if(a[i]<a[j])
+
+         {
+              
+
+temp=a[i];
+
+              a[i]=a[j];
+
+              a[j]=temp;
+          }
+  
+ 
+
+ 
+
+}
+}
+}
+void main(void)
+
+{
+
+int size,i,Num;
+
+
+int * List;
+
+
+printf("\nProgram to Illustrate the Concept of Selection Sort\n");
+
+
+printf("Enter The Size of Array");
+
+
+scanf("%d",&size);
+
+
+Num=sizeof(int)*size;
+
+
+List=(int *)malloc(Num);
+
+printf("\nEnter the Elements of array Unsorted Array\n");
+
+for(i=0;i<size;i++)
+
+{
+     
+
+scanf("%d",&List[i]);
+}
+
+
+SelectionSort(List,size);
+
+
+printfl"\nSorted List is—>\n");
+
+
+for(i=0;i<size;i++)
+
+{
+
+printf(" %d",List[i]);
+
+}
+
+printf("\n");
+
+}
+

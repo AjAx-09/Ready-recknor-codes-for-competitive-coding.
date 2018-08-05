@@ -1,0 +1,131 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+void quick(int number[],int ,int );
+
+void quick(int number[],int first,int last)
+
+{
+
+
+    int i, j ,pivot, temp;
+
+
+  if(first<1ast)
+
+  {
+       
+pivot=first;
+
+       i=first;
+
+       j=last;
+
+        while(i<j)
+
+          
+{
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+              while(number[i]<=number[pivot]&&i<last)
+
+               i++;
+
+
+                while(number[j]>number[pivot])
+
+                 j—-;
+
+
+                 if(i<j)
+
+                   {
+
+                      temp=number[i];
+
+                      number[i]=number[j];
+
+                      number[j]=temp;
+                   }
+
+           }
+
+            
+temp=number[pivot];
+
+            number[pivot]=number[j];
+
+            number[j]=temp;
+
+            quick(number,first,j-1);
+
+           quick(number,j+1,last);
+   }
+}
+
+
+void main(void)
+
+
+{
+
+   int size,i,Num;
+
+   
+int * List;
+
+
+   printf("\nProgram to Illustrate the Concept of Quick Sort\n");
+
+   printf(“Enter The Size of Array");
+   
+scanf("%d“,&size);
+
+   List=(int *)malloc(sizeof(int)*size);
+
+   printf("\nEnter the Elements of array Unsorted Array\n");
+
+
+      for(i=0;i<size;i++)
+
+       {
+
+           scanf("%d",&List[i]);
+
+ 
+
+
+
+       }
+
+   
+quick(List,0,size-1);
+
+
+   printf("\nSorted List is—>\n");
+
+     for(i=0;i<size;i++)
+
+       {
+
+          printf(" %d",List[i]);
+
+       }
+
+    printf("\n");
+
+}
+

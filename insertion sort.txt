@@ -1,0 +1,91 @@
+#include <stdio.h>
+
+#include<stdlib.h>
+
+
+void InsertionSort(int a[] ,int size);
+
+
+void InsertionSort(int a[] ,int size)
+
+{
+
+int i,j ,temp;
+
+
+for(i=1;i<size;i++)
+
+
+{
+   
+for(j=0;j<i-1;j++)
+
+    {
+        
+if(a[i]<a[j])
+
+         {
+              
+
+temp=a[i];
+
+              a[i]=a[j];
+
+              a[j]=temp;
+          }
+  
+ 
+
+ 
+
+}
+}
+}
+void main(void)
+
+{
+
+int i,*a,size;
+
+
+printf("\nProgram to Illustrate the Concept of Insertion Sort\n");
+
+
+printf("Enter The Size of Array");
+
+
+scanf("%d",&size);
+
+
+a=(int *)malloc(
+sizeof(int)*size);
+
+printf("\nEnter the Elements of array Unsorted Array\n");
+
+for(i=0;i<size;i++)
+
+{
+     
+
+scanf("%d",&a[i]);
+}
+
+
+InsertionSort(a,size);
+
+
+printfl"\nSorted List is—>\n");
+
+
+for(i=0;i<size;i++)
+
+{
+
+printf(" %d",a[i]);
+
+}
+
+printf("\n");
+
+}
+
