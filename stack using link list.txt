@@ -1,0 +1,184 @@
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#define MAX 3
+
+void PUSH(int);
+
+int POP(void);
+
+struct Node
+
+  {
+    
+int Data;
+
+    struct Node * Next;
+
+  };
+
+typedef struct Node Node;
+
+Node * Head;
+
+    int TOP;
+   void PUSH(int Num)
+
+{
+   
+Node * temp;
+      
+
+if(Head==NULL)
+       
+
+{ 
+         
+Head=(Node*)malloc(sizeof(Node));
+         
+Head->Data=Num;
+]
+         Head->Next=NULL;
+         
+TOP++;
+
+       }
+
+     else
+
+       {
+
+        if (TOP<MAX-1)
+
+          {
+
+            
+temp=Head;
+
+            Head=(Node*)malloc(sizeof(Node));
+
+            
+TOP++;
+
+            Head->Data=Num;
+
+            
+Head—>Next=temp;
+
+
+          }
+        else
+
+           {
+
+             printf("Stack Is Full");
+
+           }
+
+        }
+}
+
+
+    int POP(void)
+
+      {
+
+
+        int num=0;
+
+
+        Node * temp;
+
+        
+if(Head==NULL)
+
+          {
+
+            
+printf("Stack Is Empty");
+
+          }
+        else
+
+           {
+
+              temp=Head;
+              
+num=Head->Data;
+
+              Head=Head->Next;
+
+              
+free(temp);
+
+              TOP--;
+
+           }
+
+     
+return(num);
+      }
+
+   void main(void)
+
+
+      {
+        int Choice,Num;
+
+        TOP=-1;
+
+        Head=NULL;
+
+        while(l)
+
+          {
+
+           printf(”\nProgram to Illustrate Concept of Stack");
+
+           printf("\n1. PUSH");
+           
+printf(”\n2. POP");
+
+           printf("\n3. Exit");
+
+           printf("\nEnter Your Choice\n");
+
+           scanf("\n %d",&Choice);
+
+     switch(Choice)
+
+        {
+
+          case 1:
+
+            printf("\nEnter Number\n");
+
+            scanf("%d",&Num);
+
+            PUSH(Num);
+
+            
+break;
+
+         case 2:
+
+            
+Num=POP();
+
+            
+if(Num!=0)
+
+
+            printf(”\nElement %d Pop from Stack",Num);
+
+         case 3:
+
+            exit (0);
+
+        }
+
+         }
+
+} 

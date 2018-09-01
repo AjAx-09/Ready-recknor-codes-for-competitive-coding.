@@ -1,0 +1,128 @@
+ 
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#define MAX 5
+
+
+int TOP;
+
+
+int Stack[MAX];
+
+void PUSH(int num);
+
+
+int POP();
+
+
+
+void Push (int num)
+
+{
+
+ 
+if(TOP>=MAX-1)
+   {
+     
+(
+printf("stack is FULL”);
+
+   }
+ else
+   {
+     TOP++;
+     Stack[TOP]=num;
+   }
+}
+int POP()
+  {
+    int num;
+    if(TOP==-1)
+      {
+         printf("stack is EMPTY");
+           return 0;
+      }
+    
+
+else
+
+
+      {
+
+         num=Stack[TOP];
+         
+TOP--;
+         
+return (num);
+      
+
+}
+
+  }
+ 
+void main(void)
+
+  {
+    
+int Choice,Num;
+
+    
+TOP=-1;
+
+
+
+
+while(1)
+
+
+{
+
+  printf("\nProgram to Illustrate Concept 0f Stack");
+
+  printf("\n1. PUSH");
+
+  
+printf(”\n2. POP”);
+
+  printf("\n3. Exit");
+
+  printf(“\nEnter Your Choice\n");
+  
+
+scanf("\n %d",&Choice);
+
+  
+switch(Choice)
+
+
+   {
+
+      case 1:
+printf("\nEnter Number\n");
+
+      scanf("%d”,&Num);
+
+      PUSH(Num);
+      
+break;
+
+    case 2:
+
+      Num=POP();
+      
+if(Num!=0)
+
+      printf("\nElement %d Pop from Stack ",Num);
+
+      break;
+
+   case 3:
+
+      exit(0);
+
+   }
+}
+}

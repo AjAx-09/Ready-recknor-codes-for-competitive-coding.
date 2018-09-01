@@ -1,0 +1,282 @@
+#incude<stdio.h>
+
+#include<stdlib.h>
+
+#define MAX 5
+
+int Count;
+
+struct Node
+
+ {
+
+   int Data;
+
+   struct Node * Next;
+
+ };
+
+typedef struct Node Node;
+
+void Insert(int);
+
+int Delete(void);
+
+void Print(void);
+
+Node * Head;
+
+
+
+void Insert(int Num)
+
+{
+
+  Node *temp;
+
+
+  if(Head==NULL)
+
+   
+{
+
+    Head=(Node*)malloc(sizeof (Node));
+
+    
+Head—>Data=Num;
+
+    Head->Next=NULL;
+
+
+    Count++;
+
+ 
+else
+
+
+
+
+{
+
+  if(Count<MAX)
+
+    {
+
+     temp=Head;
+
+     while (temp->Next!=NULL)
+
+     {
+
+       temp=temp->Next;
+
+     }
+
+  temp->Next=(Node*)malloc(sizeof (Node));
+
+  temp->Next->Data=Num;
+
+  temp—>Next->Next=NULL;
+
+  Count++;
+
+}
+
+  else
+
+  {
+
+   printf("Queue is FULL");
+
+  }
+
+}
+
+}
+
+
+int Delete(void)
+{
+
+Node* temp;
+
+int num;
+
+if(Count==0)
+
+{
+
+
+printf("Queue is empty");
+
+num=0;
+
+}
+
+
+else
+
+
+{
+temp=Head;
+
+
+Head=temp->Next;
+
+
+num=temp->Data;
+
+
+Count--;
+
+
+free(temp);
+
+
+}
+
+
+return(num);
+
+}
+
+
+
+
+void Print(void)
+
+{
+
+
+Node * temp;
+
+
+if(Count==0)
+
+
+{
+
+
+printf("Queue is empty");
+
+
+}
+
+
+else
+
+
+{
+
+
+temp=Head;
+
+
+while(temp->Next!=NULL)
+
+
+{
+
+printf("\n%d",temp->Data);
+
+temp=temp->Next;
+
+
+}
+
+
+printf("\n%d",temp->Data);
+
+
+}
+}
+
+void main(void)
+
+
+{
+
+
+int choice;
+
+
+int Num;
+
+
+Count=0;
+
+
+whi1e(1)
+
+
+{
+
+
+printf(”\nProgram to Illustrate Concept of Queue");
+
+
+printf("\n 1.Insert");
+
+printf("\n 2.Delete");
+
+printf(“\n 3.Print”);
+
+printf ( "\n 4 .Exit");
+ .'
+printf("\nEnter your choice");
+
+scanf("%d”,&choice);
+
+switch(choice)
+
+
+  {
+    
+
+case 1:
+printf("Enter the Number”);
+
+    scanf("\n %d",&Num);
+    
+Insert(Num);
+     
+
+break;
+
+
+    case 2:
+
+     Num=Delete();
+
+     if(Num!=0)
+
+       
+{
+
+
+          printf("The deleted element is %d”,Num);
+
+       }
+
+
+     break;
+
+case 3:
+
+Print();
+
+break;
+
+case 4:
+
+Exit(0);
+
+break;
+
+default:
+
+
+printf("\n You Entered Wrong Choice!");
+}
+}
+}

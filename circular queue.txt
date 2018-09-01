@@ -1,0 +1,129 @@
+#include<stdio.h>
+
+
+#include<stdlib.h>
+
+
+#define MAX 5
+
+
+int Queue [MAX];
+
+
+int Front;
+
+
+int Rear;
+
+
+void InsertCQ (int) ;
+
+
+int DeleteCQ (void);
+
+
+void InsertCQ(int num)
+
+{
+
+   if(Front==-1&&Rear==-1)
+
+    {
+
+      
+Front=(Front+1)%MAX;
+
+
+      Rear=(Rear+1)%MAX;
+
+      
+Queue[Rear]=num;
+
+     }
+
+else
+
+
+{
+  if( ( (Rear+1) %MAX) ==Front)
+
+   {
+
+
+    printf("Circular Queue is Full\n");
+   }
+  else
+
+    {
+
+     Rear=(Rear+1)%MAX;
+
+     
+Queue [Rear] =num;
+
+    
+}
+
+}
+}
+int DeleteCQ(void)
+
+
+{
+
+
+
+
+int num;
+
+if(Front==-1&&Rear==-1)
+
+{
+
+  printf(”Circular Queue is Empty\n");
+
+  
+num=0;
+}
+
+  else
+
+  {
+
+    if(Queue[Front]==-1)
+
+      
+{
+          printf("Circular Queue is Empty\n");
+
+          
+num=0;
+
+          Front=-1;
+
+
+          Rear=-1;
+
+       }
+
+ else
+
+ {
+
+  num=Queue[Front];
+
+  Queue[Front]=-1;
+
+
+  Front=(Front+1)%MAX;
+
+ 
+}
+
+
+}
+return num;
+
+
+}
+

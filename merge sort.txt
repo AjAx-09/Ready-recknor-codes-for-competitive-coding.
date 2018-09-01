@@ -1,0 +1,144 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int size;
+
+
+void Merging(int arr[],int low, int mid, int high)
+
+{
+
+ int 11, 12, i;
+
+ 
+int * TA;
+
+ TA=(int *)malloc(sizeof(int)*size);
+
+
+ for(11 = low, 12 = mid + 1, i = low; 11 <= mid && 12 <= high;i++)
+
+   {  
+
+      if(arr[11] <= arr[12])
+        
+TA[i] = arr[11++];
+
+      else
+TA[i] = arr[12++];
+
+   }
+
+  
+while(11 <= mid)
+
+ TA[i++] = arr[11++];
+
+
+    while(12 <= high)
+
+      TA[i++] = arr[12++];
+
+
+for(i = low; i <= high; i++)
+
+ 
+ 
+
+    
+arr[i] = TA[i];
+
+    free(TA);
+
+
+
+void MergeSort(int arr[],int low ,int high )
+
+{
+   
+int mid;
+   if(low < high)
+
+ {
+   
+mid = (low + high) / 2;
+
+   MergeSort(arr,low, mid);
+
+   MergeSort(arr,mid+1, high);
+
+   Merging(arr,low, mid, high);
+
+ }
+
+  else
+
+
+ {
+
+
+   return;
+
+
+  
+
+}
+
+
+void main(void)
+
+{
+
+   
+int i,Num;
+   
+
+int * List;
+    
+
+printf("\nProgram to Illustrate the Concept of Merge Sort\n");
+
+printf("Enter The Size of Array"); 
+
+scanf("%d",&size);
+
+
+List=(int *)malloc(sizeof(int)*size);
+
+printf("\nEnter the Elements of array Unsorted Array\n");
+
+
+for(i=0;i<size;i++)
+{
+
+   scanf("%d",&List[i]);
+
+}
+
+
+MergeSort(List,0,size-1);
+
+
+printf("\nSorted List is—>\n");
+
+for(i=0;i<size;i++)
+
+
+{ 
+
+   printf(" %d",List[i]);
+
+}
+
+
+printf("\n");
+
+free(List);
+
+}
+
+ 
+
+ 
+

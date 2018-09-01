@@ -1,0 +1,224 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#define MAX 5
+
+
+void PushM(int);
+
+int PopM(void);
+
+int Top1;
+
+
+int Top2;
+
+
+int stack[MAX*2];
+
+
+int flag;
+
+
+
+
+void PushM(int num)
+
+  
+{
+    
+if(Top1<MAX-1)
+
+      {
+
+        Top1++;
+
+        stack[Top1]=num;
+
+        flag=0;
+
+      }
+
+   else
+
+      {
+
+      printf(“\n\n First Stack is Full!”);
+
+        if(Top2<( (MAX*2) -1))
+
+          {
+
+            Top2++;
+
+            stack[Top2]=num;
+
+            flag=1;
+
+          }
+
+       else
+
+         printf("\n\nSecond Stack is Full!!");
+
+      }
+
+  }
+
+
+
+int PopM(void)
+
+  {
+
+     
+int num;
+
+
+
+     
+if(flag==0)
+
+      {
+
+        
+if (Top1==-1)
+
+          {
+
+            
+printf("\n\nFirst is Empty");
+
+            
+num=-1;
+
+            flag=0;
+
+          }
+
+       else
+
+         {
+
+            num=stack[Top1];
+
+            Top1--;
+
+            flag=0;
+
+         
+}
+      }
+
+    else
+
+      {
+
+       if(Top2==4)
+
+         {
+
+          printf("\n\nSecond is Empty");
+
+          num=-1;
+
+          flag=0;
+
+         }
+
+       else
+
+         {
+
+          num=stack[Top2];
+
+          Top2--;
+
+          flag=1;
+
+
+         }
+      }
+
+    
+return num;
+
+ }
+
+
+
+void main(void)
+
+ 
+{
+
+   
+int ch, num;
+
+   
+Top1=-1;
+
+   
+Top2=4;
+
+   
+while(1)
+
+     {
+
+      
+
+printf("\n\nProgram to illustrate the Concept of Multiple
+
+Stack!");
+
+      
+printf(”\n1.Push");
+
+      printf(”\n2.Pop”);
+
+      printf("\n3.Exit”);
+
+      printf("\n\nEnter Your Choice:");
+
+
+
+      
+scanf ("%d",&ch);
+
+     
+switch (ch)
+
+      {
+
+        
+case 1:
+        printf("\n\nEnter a Number:");
+
+        scanf(“%d", &num);
+
+        PushM(num);
+
+        break;
+
+        
+       case 2:
+      num=PopM();
+
+      if((num!=-1))
+
+      printf("\n\nPop Number is : %d", num);
+
+      break;
+
+     
+       case 3: exit(0);
+
+        break;
+
+       
+default: printf("\n\nEnter Correct Choice!!!!") ;
+     }
+   }
+]

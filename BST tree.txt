@@ -1,0 +1,120 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node
+{
+int Data;
+struct Node * Left;
+struct Node * Right;
+};
+typedef struct Node Node;
+void CreateBST(Node * ,int);
+void Inorder(Node * );
+void Preorder(Node *);
+void Postorder(Node *);
+Node * Head;
+void CreateBST(Node * temp,int num)
+{
+if(Head==NULL)
+{
+Head=(Node*)malloc(sizeof(Node));
+Head->Data=num;
+Head->Left=NULL;
+Head->Right=NULL;
+}
+else
+{
+if(num<temp->Data)
+{
+if(temp->Left==NULL)
+{
+temp->Left=(Node*)malloc(sizeof(Node));
+temp->Left->Data=num;
+temp->Left->Left=NULL;
+temp->Left->Right=NULL;
+}
+else
+{
+CreateBST(temp->Left,num);
+}
+}
+else
+{
+if(temp->Right==NULL)
+{
+temp->Right=(Node*)malloc(sizeof(Node));
+temp->Right->Data=num;
+temp->Right->Left=NULL;
+temp->Right->Right=NULL;
+}
+else
+{
+CreateBST(temp->Right,num);
+}
+}
+}
+}
+void Inorder(Node * Temp)
+{
+if(Temp==NULL)
+{
+return;
+}
+Inorder(Temp->Left);
+printf("%d->",Temp->Data);
+Inorder(Temp->Right);
+}
+void Preorder(Node * Temp)
+{
+if(Temp==NULL)
+{
+return;
+}
+printf("%d->",Temp->Data);
+Preorder(Temp->Left);
+Preorder(Temp->Right);
+}
+void Postorder(Node * Temp)
+{ if(Temp==NULL)
+{
+return;
+}
+Postorder(Temp->Left);
+Postorder(Temp->Right);
+printf("%d->",Temp->Data);
+}
+void main(void)
+{
+int Choice,Num;
+Head=NULL;
+while(1)
+{
+printf("\nPragram to Illustrate Concept of Binary
+Serach Tree ");
+printf("\n1. Create BST");
+printf("\n2. Inorder");
+printf("\n3. Preoder");
+printf("\n4. Postorder");
+printf("\n5. Exit");
+printf("\nEnter Your Choice\n");
+scanf("\n %d",&Choice);
+switch(Choice)
+{
+case 1:
+printf("\nEnter Number\n");
+scanf("%d",&Num);
+CreateBST(Head,Num);
+break;
+case 2:
+Inorder(Head);
+break;
+case 3:
+Preorder(Head);
+break;
+case 4:
+Postorder(Head);
+break;
+case 5:
+exit(0);
+}
+}
+}

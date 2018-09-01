@@ -1,0 +1,123 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int BinarySearch(int a[], int size, int key)
+
+
+int BinarySearch(int a[], int size, int key)
+
+{
+
+   int init, last, pivot;
+
+    init=0;last=size-1;
+       
+while(init<=last)
+
+         {
+
+
+           pivot=(init+last)/2;
+             
+
+if(a[pivot]==
+
+key)
+
+                 
+return pivot;
+
+             
+else
+
+                 {
+
+                    if(a[pivot]>key)
+
+                       {
+
+                          last=pivot-1;
+                       }
+
+                   
+ 
+
+else
+
+
+                      {
+
+                         init=pivot+l;
+
+
+                      
+}
+
+
+                  }    
+         }
+      
+return 999;
+
+
+}
+
+
+void main(void)
+
+
+{
+
+  
+int size,i,key,Num;
+
+  int * List;
+
+  
+printf("\nProgram to Illustrate the Concept of Binary   Search\n");
+
+
+  printf("Enter The Size of Array");
+
+  scanf("%d",&size);
+
+
+  Num=sizeof(int)*size;
+
+
+  List=(int *)malloc(Num);
+
+  printf("\nEnter the Elements of array\n");
+
+  for(i=0;i<size;i++)
+
+    {
+      
+scanf("%d",&List[i]);
+
+    }
+
+
+printf("\nEnter the Element to Search ");
+
+scanf("%d",&key);
+
+
+Num=BinarySearch(List,size,key);
+
+
+if(Num==999)
+
+
+   {
+    
+printf("\nElement Not Found in List");
+
+    }
+
+else
+
+  printf("Element %d Found at Position %d\n",key,Num);
+
+}

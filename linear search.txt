@@ -1,0 +1,88 @@
+ 
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int LinearSearch(int arr[], int size , int key);
+
+
+int LinearSearch(int * arr, int size , int key)
+
+
+{
+
+   int i;
+
+   for(i=0;i<size;i++)
+
+     {
+
+         if(key==arr[i])
+
+          {
+
+             return i;
+
+           }
+
+      }
+
+   if(i==size)
+
+return 999;
+
+}
+
+
+void main(void)
+
+
+{
+
+
+  int size,i,key,Num;
+
+  int * List;
+
+  
+printf("\nProgram to Illustrate the Concept of Linear Search\n");
+
+
+printf("Enter The Size of Array");
+
+scanf("%d",&size);
+
+Num=sizeof(int)*size;
+
+List=(int *)malloc(Num);
+
+printf("\nEnter the Elements of array\n");
+
+  for(i=0;i<size;i++)
+
+ {
+
+   scanf("%d”,&List[i]);
+
+  }
+ 
+
+printf("\nEnter the Element to Search ");
+
+scanf("%d",&key);
+
+
+Num=LinearSearch(List,size,key);
+
+    
+if (Num==999)
+
+     {
+
+         printf("\nElement Not Found in List");
+     }
+   else
+
+     printf("Element %d Found at Position %d",key,Num);
+}

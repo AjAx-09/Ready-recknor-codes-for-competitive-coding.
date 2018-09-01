@@ -1,0 +1,163 @@
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#define MAX 2
+
+
+int Queue [MAX] ;
+
+
+int Front;
+
+int Rear;
+
+
+
+void InsertQ (int Num)
+
+
+{
+
+    (Front ==-1llRear==-1)
+
+   {
+
+    Front++;
+
+    Rear++;
+
+    Queue[Rear]=Num;
+
+
+   }
+
+  else
+
+
+   {
+
+
+    if(Rear<MAX-1)
+
+
+       {
+         
+Rear++;
+
+         Queue[Rear]=Num;
+
+
+       }
+
+   else
+
+     {
+
+       printf(”Queue is full");
+
+
+     }
+
+   }
+
+}
+int DeleteQ(void)
+
+{
+
+int Num=0;
+
+if(Front==-1||Front>Rear)
+
+{
+
+printf("Queue is Empty");
+
+Front=-1;
+
+Rear=-1;
+}
+
+ 
+else
+  {
+
+   
+Num=Queue[Front];
+
+   Front++;
+  }
+
+
+return Num;
+
+}
+
+
+void main(void)
+
+{
+
+  int Choice,Num,n;
+
+  Front=-1;
+
+  
+Rear=-1;
+
+
+
+while(1)
+
+{
+
+
+printf("\nProgram to Illustrate Concept of Queue”);
+
+
+printf("\n1. Insert“);
+
+printf(“\n2. Delete”);
+
+printf(”\n3. Exit“);
+
+printf(“\nEnter Your Choice\n”);
+
+scanf(”\n %d",&Choice);
+
+switchtChoice)
+
+{
+
+  case 1:
+  
+printf("\nEnter Number\n”);
+ 
+ scanf(”%d",&Num);
+  InsertQ(Num);
+
+  break;
+
+    case 2:
+
+     n=DeleteQ();
+
+    if(n!=0)
+
+    printf("\nElement %d Deleted from Queue ”,n);
+
+    else
+
+      printf("Queue is Empty”);
+
+      break;
+
+   case 3:
+
+
+   exit(0);
+}
+}
+}
