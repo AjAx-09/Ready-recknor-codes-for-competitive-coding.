@@ -1,0 +1,5 @@
+int        abs( int n );
+long       labs( long n );
+long long llabs( long long n );
+intmax_t imaxabs( intmax_t n );
+Computes the absolute value of an integer number. The behavior is undefined if the result cannot be represented by the return type.
